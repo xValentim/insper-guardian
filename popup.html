@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PluginSec</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Fonte mais limpa e moderna */
+      margin: 20px;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    h3 {
+      color: #0056b3; /* Um azul profundo para títulos */
+    }
+
+    .result, .cookie-count {
+      margin: 10px 0;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    #results {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .column {
+      width: 48%;
+    }
+
+    button {
+      margin: 10px 0;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    ul {
+      list-style-type: none; /* Remove bullets */
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px;
+      background: #ffffff;
+      border-bottom: 1px solid #eeeeee;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Security Score</h3>
+  <div id="secScore"></div>
+  <button id="calculateScore">Calculate Score</button>
+  <script src="src/score.js"></script>
+  <hr>
+
+  <h3>Local Storage</h3>
+  <div id="results">
+    <div id="localStorage" class="result">Local Storage: 0</div>
+    <div id="sessionStorage" class="result">Session Storage: 0</div>
+  </div>
+  <script src="src/storage.js"></script>
+
+  <h3>Cookies Count</h3>
+  <div>Total cookies: <span id="totalCookies">0</span></div>
+  <div class="container">
+    <div class="column">
+      <div class="cookie-count">First-party cookies: <span id="firstPartyCookies">0</span></div>
+      <div class="cookie-count">Third-party cookies: <span id="thirdPartyCookies">0</span></div>
+    </div>
+    <div class="column">
+      <div class="cookie-count">Session cookies: <span id="sessionCookies">0</span></div>
+      <div class="cookie-count">Persistent cookies: <span id="persistentCookies">0</span></div>
+    </div>
+  </div>
+  <script src="src/cookies.js"></script>
+
+  <h3>Third-Party Domains</h3>
+  <ul id="allInstance"></ul>
+  <button id="more" style="display:none;">Show More</button>
+  <button id="less" style="display:none;">Show Less</button>
+  <script src="src/third.js"></script>
+
+  <h3>Hijacking Detection</h3>
+  <div id="possibleHijacking">Loading...</div>
+  <script src="src/ports.js"></script>
+
+  <h3>Canvas Fingerprint Detection</h3>
+  <div id="status">Checking...</div>
+  <script src="src/canvas.js"></script>
+
+</body>
+</html>
